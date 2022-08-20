@@ -14,6 +14,8 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 
 import com.openhrm.qa.util.TestUtil;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class TestBase {
 public	static WebDriver driver;
 public	static Properties prop;
@@ -22,8 +24,8 @@ public	static Properties prop;
 		
 		try {
 			prop = new Properties();
-			FileInputStream fis = new FileInputStream(
-					"E:\\Selenium_project\\SeleniumDemoFramework\\src\\main\\java\\com\\openhrm\\qa\\config\\config.properties");
+			FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+
+					"\\src\\main\\java\\com\\openhrm\\qa\\config\\config.properties");
 		  	prop.load(fis);
 			 
 		} catch (FileNotFoundException e) {
@@ -40,15 +42,18 @@ public	static Properties prop;
 		
 		if(browsername.equalsIgnoreCase("chrome")) {
 			System.out.println("browsr start");
-			System.setProperty("webdriver.chrome.driver", "E:\\browserdriver\\chrome80\\chromedriver.exe");
+			//System.setProperty("webdriver.chrome.driver", "E:\\browserdriver\\chrome80\\chromedriver.exe");
+			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 			System.out.println("browsr launch");
 		}else if (browsername.equalsIgnoreCase("firefox")) {
-			System.setProperty("webdriver.gecko.driver", "E:\\browserdriver\\ff26\\geckodriver.exe");
+			//System.setProperty("webdriver.gecko.driver", "E:\\browserdriver\\ff26\\geckodriver.exe");
+			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 		} else if (browsername.equalsIgnoreCase("ie")) {
 
-			System.setProperty("webdriver.ie.driver", "E:\\browserdriver\\IEDriver311\\IEDriverServer.exe");
+		//	System.setProperty("webdriver.ie.driver", "E:\\browserdriver\\IEDriver311\\IEDriverServer.exe");
+			WebDriverManager.iedriver().setup();
 			driver = new InternetExplorerDriver();
 		}else {
 			System.out.println("Invalid Browser choice");

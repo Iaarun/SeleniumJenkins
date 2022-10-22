@@ -5,6 +5,10 @@
 	<groupId>SeleniumDemoFramework</groupId>
 	<artifactId>SeleniumDemoFramework</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
 	<build>
 		<plugins>
 			<plugin>
@@ -14,7 +18,7 @@
 				<version>3.0.0-M3</version>
 				<configuration>
 					<suiteXmlFiles>
-						<suiteXmlFile>E:\UdemyPoonam\SeleniumWithGitAndJenkins\src\main\resource\testng_sanity.xml</suiteXmlFile>
+						<suiteXmlFile>D:\sample\SeleniumJenkins\src\main\resource\testng_sanity.xml</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>

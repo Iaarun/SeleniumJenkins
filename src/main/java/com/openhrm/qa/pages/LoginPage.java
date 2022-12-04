@@ -11,13 +11,13 @@ public class LoginPage extends TestBase {
 	// Object Repository
  // WebElement user1= driver.findElement(By.id("txtUsername"));
 	
-    @FindBy(id = "txtUsername")
+    @FindBy(name = "username")
 	WebElement username;
 
-	@FindBy(name = "txtPassword")
+	@FindBy(name = "password")
 	WebElement password;
 
-	@FindBy(xpath = "//input[@id='btnLogin']")
+	@FindBy(xpath = "//button[normalize-space()='Login']")
 	WebElement lgn_btn;
 
 	@FindBy(xpath = "//div[@id='divLogo']/img")

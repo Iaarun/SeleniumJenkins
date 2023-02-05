@@ -1,4 +1,8 @@
 This is a dummy text file updated on master
 This is a dummy text file updated on localbranch
 Edit for test purpose
+
 line1 added
+
+my first change
+
